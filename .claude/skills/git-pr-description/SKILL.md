@@ -1,5 +1,5 @@
 ---
-name: Git PR Description
+name: git-pr-description
 description: 根據當前 branch 與目標 branch 的差異，自動產生 Pull Request 的 Title 與 Description。當使用者提到「PR」、「Pull Request」、「寫 PR」、「PR 描述」、「PR description」、「建立 PR」時觸發此 Skill。
 ---
 

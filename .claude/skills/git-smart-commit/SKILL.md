@@ -1,9 +1,9 @@
 ---
-name: Git Smart Commit
+name: git-smart-commit
 description: 將雜亂的 git 變更，依功能邏輯自動拆分成多個有意義的 conventional commit
 ---
 
-# Git Smart Commit — 智慧拆分提交
+# git-smart-commit — 智慧拆分提交
 
 將目前所有 staged / unstaged 變更，依功能邏輯分群後，逐批 `git add` + `git commit`。
 
