@@ -3,6 +3,47 @@
    ======================================== */
 
 /* --- CSS Custom Properties --- */
+
+/* Light Theme */
+[data-theme="light"] {
+  /* Colors */
+  --color-bg: #f8fafc;
+  --color-bg-elevated: #ffffff;
+  --color-bg-card: #ffffff;
+  --color-bg-card-hover: #f1f5f9;
+  --color-surface: #e2e8f0;
+
+  --color-primary: #6366f1;
+  --color-primary-light: #4f46e5;
+  --color-primary-dark: #4338ca;
+  --color-primary-glow: rgba(99, 102, 241, 0.15);
+
+  --color-accent: #0891b2;
+  --color-accent-light: #06b6d4;
+
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+
+  --color-text: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748b;
+  --color-text-inverse: #f1f5f9;
+
+  --color-border: rgba(15, 23, 42, 0.1);
+  --color-border-hover: rgba(15, 23, 42, 0.2);
+
+  /* Shadows - lighter for light theme */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 0 40px var(--color-primary-glow);
+
+  /* Navbar background for light theme */
+  --navbar-bg: rgba(248, 250, 252, 0.9);
+}
+
+/* Dark Theme (default) */
 :root {
   /* Colors */
   --color-bg: #0a0e1a;
@@ -256,7 +297,7 @@ button {
   right: 0;
   height: var(--navbar-height);
   z-index: 1000;
-  background: rgba(10, 14, 26, 0.8);
+  background: var(--navbar-bg, rgba(10, 14, 26, 0.8));
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--color-border);
 }
@@ -318,6 +359,29 @@ button {
 
 .navbar__link:hover::after {
   width: 100%;
+}
+
+/* Theme Toggle Button */
+.navbar__theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  font-size: var(--text-lg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  margin-right: var(--space-2);
+}
+
+.navbar__theme-toggle:hover {
+  background: var(--color-primary-glow);
+  border-color: var(--color-primary-light);
+  color: var(--color-primary-light);
 }
 
 .navbar__toggle {
