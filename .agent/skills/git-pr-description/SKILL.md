@@ -5,7 +5,7 @@ description: 根據當前 branch 與目標 branch 的差異，自動產生 Pull 
 
 # Git PR Description — 自動產生 PR 標題與描述
 
-根據當前 branch 相對於目標 branch（預設 `master`）的所有 commit 與 diff，產出結構化的 PR Title 與 Description。
+根據當前 branch 相對於目標 branch（預設 `develop`）的所有 commit 與 diff，產出結構化的 PR Title 與 Description。
 
 ---
 
@@ -19,12 +19,12 @@ description: 根據當前 branch 與目標 branch 的差異，自動產生 Pull 
 git branch --show-current
 ```
 
-預設目標 branch 為 `master`。若使用者指定其他 base branch，以使用者指定為準。
+預設目標 branch 為 `develop`。若使用者指定其他 base branch，以使用者指定為準。
 
 確認當前 branch 相對於目標 branch 有 commit 差異：
 
 ```bash
-git log --oneline master..HEAD
+git log --oneline develop..HEAD
 ```
 
 若無差異，告知使用者「當前 branch 與目標 branch 沒有差異」後結束。
@@ -37,16 +37,16 @@ git log --oneline master..HEAD
 
 ```bash
 # commit 摘要
-git log --oneline master..HEAD
+git log --oneline develop..HEAD
 
 # 詳細 commit 訊息
-git log --format="%h %s%n%b" master..HEAD
+git log --format="%h %s%n%b" develop..HEAD
 
 # 變更檔案統計
-git diff --stat master..HEAD
+git diff --stat develop..HEAD
 
 # 完整 diff（用於分析具體改動）
-git diff master..HEAD
+git diff develop..HEAD
 ```
 
 ---
